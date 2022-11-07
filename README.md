@@ -1,4 +1,5 @@
-Projektni zadatak: Softver za prodaju ulaznica
+**Projektni zadatak:** 
+Softver za prodaju ulaznica
 
 Opis zadatka:
 
