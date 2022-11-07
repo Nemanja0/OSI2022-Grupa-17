@@ -1,9 +1,10 @@
 **Projektni zadatak:** 
+
 Softver za prodaju ulaznica
 
-Opis zadatka:
+**Opis zadatka:**
 
--Implementirati jednostavan sistem za prodaju ulaznica. Sistem koriste različite vrste korisnika, a svi moraju imati otvoren nalog. Svi podaci o registrovanim korisnicima se čuvaju u datoteci u sklopu aplikacije. Za korisnički nalog obavezno se čuvaju ime i prezime korisnika, korisničko ime i lozinka. Moguće je dodati i druge podatke. Registracija na sistem je otvorena samo za kreiranje običnih korisničkih naloga. Kada se prijave na sistem, korisnici mogu koristiti različite opcije, u zavisnosti od vrste naloga koje imaju. Potrebno je realizovati tri vrste korisničkih naloga: korisnički, administratorski i klijentski.
+> Implementirati jednostavan sistem za prodaju ulaznica. Sistem koriste različite vrste korisnika, a svi moraju imati otvoren nalog. Svi podaci o registrovanim korisnicima se čuvaju u datoteci u sklopu aplikacije. Za korisnički nalog obavezno se čuvaju ime i prezime korisnika, korisničko ime i lozinka. Moguće je dodati i druge podatke. Registracija na sistem je otvorena samo za kreiranje običnih korisničkih naloga. Kada se prijave na sistem, korisnici mogu koristiti različite opcije, u zavisnosti od vrste naloga koje imaju. Potrebno je realizovati tri vrste korisničkih naloga: korisnički, administratorski i klijentski.
 
 -Administratorske i klijentske naloge mogu kreirati samo administratori. Prvi podrazumijevani nalog dolazi u sklopu instalacije i nakon prve prijave na sistem sa tim (admin/admin) nalogom mora se promijeniti šifra. Administratori imaju mogućnost upravljanja klijentskim i korisničkim nalozima (aktivacija, suspendovanje, brisanje, poništavanje šifre, …) i blokiranja klijentskih događaja.
 
