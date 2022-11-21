@@ -3,10 +3,10 @@ package predmet;
 
 public class Predmet {
 	
-	String ime;
-	int ECTS, sifra;
+	private String ime;
+	private int ECTS, sifra;
 	
-	Predmet(String ime, int ECTS, int sifra){
+	public Predmet(String ime, int ECTS, int sifra){
 		this.ime=ime;
 		this.ECTS=ECTS;
 		this.sifra=sifra;
