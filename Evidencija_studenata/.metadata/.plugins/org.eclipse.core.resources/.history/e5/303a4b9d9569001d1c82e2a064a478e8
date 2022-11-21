@@ -32,8 +32,5 @@ public class Student {
 	public void setStudijskiProgram(String studijski_program) {
 		this.studijski_program = studijski_program;
 	}
-	public String toString() {
-		return "Ime: " + this.ime + " Prezime: " + this.prezime + " Broj Indeksa: " + this.br_indexa;
-	}
 	
 }
