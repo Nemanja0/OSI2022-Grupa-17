@@ -1,0 +1,11 @@
+package student;
+
+public class Student {
+	private String ime, prezime, br_indexa, studijski_program;	
+	public Student(String ime, String prezime, String br_indexa, String studijski_program) {
+		this.ime = ime;
+		this.prezime = prezime;
+		this.br_indexa = br_indexa;
+		this.studijski_program = studijski_program;
+	}
+}

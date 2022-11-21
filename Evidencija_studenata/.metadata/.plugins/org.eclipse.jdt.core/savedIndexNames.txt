@@ -1,3 +1,4 @@
-INDEX VERSION 1.131+C:\Users\Medion\Desktop\4. godina\Evidencija_studenata\.metadata\.plugins\org.eclipse.jdt.core
-2589523103.index
+INDEX VERSION 1.131+C:\Users\Medion\Desktop\4. godina\New folder\OSI_Grupa17\Evidencija_studenata\.metadata\.plugins\org.eclipse.jdt.core
 3711528064.index
+1865797976.index
+2589523103.index

@@ -1,0 +1,6 @@
+package student;
+
+public class Student {
+	private String ime, prezime, br_indexa, studijski_program;	
+
+}
