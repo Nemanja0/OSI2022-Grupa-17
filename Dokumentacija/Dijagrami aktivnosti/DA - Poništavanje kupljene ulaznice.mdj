@@ -57,7 +57,7 @@
 											"top": 92,
 											"width": 193,
 											"height": 13,
-											"text": "Običan korisnik",
+											"text": "Registrovani korisnik",
 											"verticalAlignment": 3
 										}
 									],
@@ -173,9 +173,9 @@
 													"font": "Arial;13;0",
 													"left": -216,
 													"top": -120,
-													"width": 127.13720703125,
+													"width": 156,
 													"height": 13,
-													"text": "(from Običan korisnik)"
+													"text": "(from Registrovani korisnik)"
 												},
 												{
 													"_type": "LabelView",
@@ -253,7 +253,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -144,
-													"top": -32,
+													"top": 48,
 													"height": 13
 												},
 												{
@@ -264,9 +264,9 @@
 													},
 													"font": "Arial;13;1",
 													"left": 301,
-													"top": 207,
+													"top": 247,
 													"width": 151,
-													"height": 26,
+													"height": 39,
 													"text": "Provjera da li je korisnik siguran sa zahtjevom",
 													"wordWrap": true
 												},
@@ -279,7 +279,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -144,
-													"top": -32,
+													"top": 48,
 													"width": 86.6708984375,
 													"height": 13,
 													"text": "(from Activity1)"
@@ -293,16 +293,16 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -144,
-													"top": -32,
+													"top": 48,
 													"horizontalAlignment": 1,
 													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 296,
-											"top": 200,
+											"top": 240,
 											"width": 161,
-											"height": 38,
+											"height": 51,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAx3Iv7v5dck="
 											},
@@ -320,7 +320,7 @@
 									"font": "Arial;13;0",
 									"containerChangeable": true,
 									"left": 296,
-									"top": 200,
+									"top": 240,
 									"width": 161,
 									"height": 67,
 									"nameCompartment": {
@@ -456,8 +456,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 276,
-											"top": 208,
+											"left": 279,
+											"top": 227,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -477,8 +477,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 277,
-											"top": 193,
+											"left": 283,
+											"top": 212,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -498,8 +498,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 275,
-											"top": 237,
+											"left": 272,
+											"top": 256,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -517,7 +517,7 @@
 										"$ref": "AAAAAAGFAxfpDrupNaY="
 									},
 									"lineStyle": 1,
-									"points": "257:228;295:230",
+									"points": "257:244;295:253",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAyQ/uLxQ+MA="
@@ -551,7 +551,7 @@
 											"font": "Arial;13;0",
 											"left": 246,
 											"top": 390,
-											"width": 18.05908203125,
+											"width": 19,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -666,8 +666,8 @@
 													"left": 309,
 													"top": 495,
 													"width": 135,
-													"height": 26,
-													"text": "Povećava broj slobodni ulaznica",
+													"height": 39,
+													"text": "Povećava broj slobodnih ulaznica za dati dogadjaj",
 													"wordWrap": true
 												},
 												{
@@ -702,7 +702,7 @@
 											"left": 304,
 											"top": 488,
 											"width": 145,
-											"height": 38,
+											"height": 51,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAyZ7KbyKsaI="
 											},
@@ -722,7 +722,7 @@
 									"left": 304,
 									"top": 488,
 									"width": 145,
-									"height": 54,
+									"height": 67,
 									"nameCompartment": {
 										"$ref": "AAAAAAGFAyZ7KbyJyg8="
 									},
@@ -776,7 +776,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -112,
-													"top": 16,
+													"top": -32,
 													"height": 13
 												},
 												{
@@ -787,10 +787,11 @@
 													},
 													"font": "Arial;13;1",
 													"left": 109,
-													"top": 327,
-													"width": 144.447265625,
-													"height": 13,
-													"text": "Korisnik donosi odluku"
+													"top": 303,
+													"width": 143,
+													"height": 39,
+													"text": "Korisnik donosi odluku o ponistavanju kupovine",
+													"wordWrap": true
 												},
 												{
 													"_type": "LabelView",
@@ -801,7 +802,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -112,
-													"top": 16,
+													"top": -32,
 													"width": 86.6708984375,
 													"height": 13,
 													"text": "(from Activity1)"
@@ -815,16 +816,16 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -112,
-													"top": 16,
-													"height": 13,
-													"horizontalAlignment": 1
+													"top": -32,
+													"horizontalAlignment": 1,
+													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 104,
-											"top": 320,
-											"width": 154.447265625,
-											"height": 25,
+											"top": 296,
+											"width": 153,
+											"height": 51,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAyeC0by2Dvg="
 											},
@@ -842,12 +843,13 @@
 									"font": "Arial;13;0",
 									"containerChangeable": true,
 									"left": 104,
-									"top": 320,
-									"width": 154.447265625,
-									"height": 41,
+									"top": 296,
+									"width": 153,
+									"height": 67,
 									"nameCompartment": {
 										"$ref": "AAAAAAGFAyeC0by10v4="
-									}
+									},
+									"wordWrap": true
 								},
 								{
 									"_type": "UMLControlFlowView",
@@ -870,8 +872,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 273,
-											"top": 300,
+											"left": 280,
+											"top": 309,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -891,8 +893,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 280,
-											"top": 313,
+											"left": 285,
+											"top": 323,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -912,8 +914,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 258,
-											"top": 273,
+											"left": 271,
+											"top": 280,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -931,7 +933,7 @@
 										"$ref": "AAAAAAGFAx3Iv7v36vg="
 									},
 									"lineStyle": 1,
-									"points": "314:267;218:319",
+									"points": "295:296;257:307",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAygrULzPW2k="
@@ -965,7 +967,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 193,
-											"top": 373,
+											"top": 374,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -986,7 +988,7 @@
 											"visible": null,
 											"font": "Arial;13;0",
 											"left": 208,
-											"top": 373,
+											"top": 374,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1007,7 +1009,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 164,
-											"top": 374,
+											"top": 375,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1025,7 +1027,7 @@
 										"$ref": "AAAAAAGFAyeC0by0JSQ="
 									},
 									"lineStyle": 1,
-									"points": "180:361;179:399",
+									"points": "180:363;179:399",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAyhferz57z8="
@@ -1389,8 +1391,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 388,
-											"top": 556,
+											"left": 387,
+											"top": 562,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -1410,8 +1412,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 403,
-											"top": 557,
+											"left": 402,
+											"top": 562,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1431,8 +1433,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 359,
-											"top": 555,
+											"left": 358,
+											"top": 563,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1450,7 +1452,7 @@
 										"$ref": "AAAAAAGFAyZ7KbyI87o="
 									},
 									"lineStyle": 1,
-									"points": "375:542;373:583",
+									"points": "374:555;373:583",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAysJcL2GCN4="
@@ -1496,7 +1498,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGFAxWo9buAWeQ="
 							},
-							"name": "Povećava broj slobodni ulaznica"
+							"name": "Povećava broj slobodnih ulaznica za dati dogadjaj"
 						},
 						{
 							"_type": "UMLInitialNode",
@@ -1512,7 +1514,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGFAxWo9buAWeQ="
 							},
-							"name": "Korisnik donosi odluku"
+							"name": "Korisnik donosi odluku o ponistavanju kupovine"
 						},
 						{
 							"_type": "UMLActivityFinalNode",
@@ -1719,7 +1721,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGFAxWo9buAWeQ="
 							},
-							"name": "Običan korisnik",
+							"name": "Registrovani korisnik",
 							"nodes": [
 								{
 									"_type": "UMLAction",
