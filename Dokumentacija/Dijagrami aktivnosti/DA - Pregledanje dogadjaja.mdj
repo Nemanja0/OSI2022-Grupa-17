@@ -928,7 +928,7 @@
 											"font": "Arial;13;1",
 											"left": 109,
 											"top": 511,
-											"width": 150.26171875,
+											"width": 151,
 											"height": 13,
 											"text": "Unos korisnickog imena"
 										},
@@ -963,7 +963,7 @@
 									"font": "Arial;13;0",
 									"left": 104,
 									"top": 504,
-									"width": 160.26171875,
+									"width": 161,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGFAulbeCr6Tko="
@@ -986,7 +986,7 @@
 							"containerChangeable": true,
 							"left": 104,
 							"top": 504,
-							"width": 160.26171875,
+							"width": 161,
 							"height": 41,
 							"nameCompartment": {
 								"$ref": "AAAAAAGFAulbeCr5Oww="
@@ -1074,7 +1074,7 @@
 								"$ref": "AAAAAAGFAulbeCr47Nk="
 							},
 							"lineStyle": 1,
-							"points": "183:545;184:608;343:609",
+							"points": "184:545;184:608;343:609",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGFAuplDytEyJE="
@@ -1411,7 +1411,7 @@
 											"font": "Arial;13;1",
 											"left": 21,
 											"top": 1023,
-											"width": 148.103515625,
+											"width": 149,
 											"height": 13,
 											"text": "Unos korisnicke lozinke"
 										},
@@ -1446,7 +1446,7 @@
 									"font": "Arial;13;0",
 									"left": 16,
 									"top": 1016,
-									"width": 158.103515625,
+									"width": 159,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGFAuwGbCus82o="
@@ -1469,7 +1469,7 @@
 							"containerChangeable": true,
 							"left": 16,
 							"top": 1016,
-							"width": 158.103515625,
+							"width": 159,
 							"height": 41,
 							"nameCompartment": {
 								"$ref": "AAAAAAGFAuwGbCurwFk="
@@ -2213,7 +2213,7 @@
 								"$ref": "AAAAAAGFAu5DLiwQtM0="
 							},
 							"lineStyle": 1,
-							"points": "215:853;608:856;608:528;264:525",
+							"points": "215:853;608:856;608:528;265:525",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGFAvCEhSxb+wc="
@@ -2266,7 +2266,7 @@
 											"font": "Arial;13;1",
 											"left": 405,
 											"top": 1023,
-											"width": 124.97900390625,
+											"width": 130,
 											"height": 13,
 											"text": "Memorisanje naloga"
 										},
@@ -2301,7 +2301,7 @@
 									"font": "Arial;13;0",
 									"left": 400,
 									"top": 1016,
-									"width": 134.97900390625,
+									"width": 140,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGFAvFLiix1Gco="
@@ -2321,7 +2321,7 @@
 							"containerChangeable": true,
 							"left": 400,
 							"top": 1016,
-							"width": 134.97900390625,
+							"width": 140,
 							"height": 41,
 							"nameCompartment": {
 								"$ref": "AAAAAAGFAvFLiix0Ryg="
@@ -2513,7 +2513,7 @@
 								"$ref": "AAAAAAGFAuwGbCuqdsk="
 							},
 							"lineStyle": 1,
-							"points": "174:1036;399:1036",
+							"points": "175:1036;399:1036",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGFAvJCmSyqhxM="
@@ -2733,7 +2733,7 @@
 								"$ref": "AAAAAAGFAvFLiixzDyQ="
 							},
 							"lineStyle": 1,
-							"points": "510:1057;605:1103",
+							"points": "512:1057;605:1103",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGFAvWCMy0ncuQ="
@@ -3756,7 +3756,7 @@
 									"top": 156,
 									"width": 297,
 									"height": 13,
-									"text": "Korisnik",
+									"text": "Običan korisnik",
 									"verticalAlignment": 3
 								}
 							],
@@ -4786,9 +4786,9 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": 648,
-											"width": 86.6708984375,
+											"width": 127,
 											"height": 13,
-											"text": "(from Korisnik)"
+											"text": "(from Običan korisnik)"
 										},
 										{
 											"_type": "LabelView",
@@ -5622,7 +5622,7 @@
 									"font": "Arial;13;0",
 									"left": 182,
 									"top": 524,
-									"width": 18,
+									"width": 19,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -6697,7 +6697,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGFAxDnKwBIfi4="
 					},
-					"name": "Korisnik",
+					"name": "Običan korisnik",
 					"nodes": [
 						{
 							"_type": "UMLAction",
