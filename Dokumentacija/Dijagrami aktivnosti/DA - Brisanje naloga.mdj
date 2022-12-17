@@ -91,7 +91,7 @@
 											"font": "Arial;13;0",
 											"left": 360,
 											"top": 164,
-											"width": 217,
+											"width": 313,
 											"height": 13,
 											"text": "Sistem",
 											"verticalAlignment": 3
@@ -112,12 +112,15 @@
 										},
 										{
 											"$ref": "AAAAAAGFAvvL9AX9X0s="
+										},
+										{
+											"$ref": "AAAAAAGFAvZ95wUuAEI="
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 360,
 									"top": 160,
-									"width": 217,
+									"width": 313,
 									"height": 809,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAuuwSgQZRzI="
@@ -747,7 +750,7 @@
 									},
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 464,
+									"left": 496,
 									"top": 624,
 									"width": 23,
 									"height": 19
@@ -792,8 +795,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 489,
-											"top": 587,
+											"left": 519,
+											"top": 586,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -813,8 +816,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 504,
-											"top": 587,
+											"left": 534,
+											"top": 585,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -834,8 +837,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 460,
-											"top": 588,
+											"left": 490,
+											"top": 589,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -853,7 +856,7 @@
 										"$ref": "AAAAAAGFAvOccgTWIIg="
 									},
 									"lineStyle": 1,
-									"points": "476:565;475:623",
+									"points": "504:565;507:623",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAvZDMwUb2kw="
@@ -864,110 +867,6 @@
 									"propertyLabel": {
 										"$ref": "AAAAAAGFAvZDMwUd9Yc="
 									}
-								},
-								{
-									"_type": "UMLActionView",
-									"_id": "AAAAAAGFAvZ95wUuAEI=",
-									"_parent": {
-										"$ref": "AAAAAAGFAus9awPq6sI="
-									},
-									"model": {
-										"$ref": "AAAAAAGFAvZ95wUsiYE="
-									},
-									"subViews": [
-										{
-											"_type": "UMLNameCompartmentView",
-											"_id": "AAAAAAGFAvZ95wUv/fM=",
-											"_parent": {
-												"$ref": "AAAAAAGFAvZ95wUuAEI="
-											},
-											"model": {
-												"$ref": "AAAAAAGFAvZ95wUsiYE="
-											},
-											"subViews": [
-												{
-													"_type": "LabelView",
-													"_id": "AAAAAAGFAvZ96AUwa00=",
-													"_parent": {
-														"$ref": "AAAAAAGFAvZ95wUv/fM="
-													},
-													"visible": false,
-													"font": "Arial;13;0",
-													"left": -48,
-													"top": 480,
-													"height": 13
-												},
-												{
-													"_type": "LabelView",
-													"_id": "AAAAAAGFAvZ96AUxZmk=",
-													"_parent": {
-														"$ref": "AAAAAAGFAvZ95wUv/fM="
-													},
-													"font": "Arial;13;1",
-													"left": 493,
-													"top": 783,
-													"width": 68.62451171875,
-													"height": 52,
-													"text": "Ispisivanje forme o uspjesnom brisanju",
-													"wordWrap": true
-												},
-												{
-													"_type": "LabelView",
-													"_id": "AAAAAAGFAvZ96AUygnE=",
-													"_parent": {
-														"$ref": "AAAAAAGFAvZ95wUv/fM="
-													},
-													"visible": false,
-													"font": "Arial;13;0",
-													"left": -48,
-													"top": 480,
-													"width": 86.6708984375,
-													"height": 13,
-													"text": "(from Activity1)"
-												},
-												{
-													"_type": "LabelView",
-													"_id": "AAAAAAGFAvZ96AUz2O4=",
-													"_parent": {
-														"$ref": "AAAAAAGFAvZ95wUv/fM="
-													},
-													"visible": false,
-													"font": "Arial;13;0",
-													"left": -48,
-													"top": 480,
-													"horizontalAlignment": 1,
-													"wordWrap": true
-												}
-											],
-											"font": "Arial;13;0",
-											"left": 488,
-											"top": 776,
-											"width": 78.62451171875,
-											"height": 64,
-											"stereotypeLabel": {
-												"$ref": "AAAAAAGFAvZ96AUwa00="
-											},
-											"nameLabel": {
-												"$ref": "AAAAAAGFAvZ96AUxZmk="
-											},
-											"namespaceLabel": {
-												"$ref": "AAAAAAGFAvZ96AUygnE="
-											},
-											"propertyLabel": {
-												"$ref": "AAAAAAGFAvZ96AUz2O4="
-											}
-										}
-									],
-									"font": "Arial;13;0",
-									"containerChangeable": true,
-									"left": 488,
-									"top": 776,
-									"width": 78.62451171875,
-									"height": 80,
-									"nameCompartment": {
-										"$ref": "AAAAAAGFAvZ95wUv/fM="
-									},
-									"wordWrap": true
 								},
 								{
 									"_type": "UMLActionView",
@@ -997,7 +896,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -16,
+													"left": 16,
 													"top": 480,
 													"height": 13
 												},
@@ -1008,9 +907,9 @@
 														"$ref": "AAAAAAGFAvbrZgVMbzA="
 													},
 													"font": "Arial;13;1",
-													"left": 373,
+													"left": 389,
 													"top": 783,
-													"width": 83.79541015625,
+													"width": 84,
 													"height": 52,
 													"text": "Ispisivanje forme o neuspjesnom brisanju",
 													"wordWrap": true
@@ -1023,7 +922,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -16,
+													"left": 16,
 													"top": 480,
 													"width": 86.6708984375,
 													"height": 13,
@@ -1037,16 +936,16 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -16,
+													"left": 16,
 													"top": 480,
 													"horizontalAlignment": 1,
 													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 368,
+											"left": 384,
 											"top": 776,
-											"width": 93.79541015625,
+											"width": 94,
 											"height": 64,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAvbrZgVNFAY="
@@ -1064,9 +963,9 @@
 									],
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 368,
+									"left": 384,
 									"top": 776,
-									"width": 93.79541015625,
+									"width": 94,
 									"height": 80,
 									"nameCompartment": {
 										"$ref": "AAAAAAGFAvbrZgVMbzA="
@@ -1093,12 +992,12 @@
 												"$ref": "AAAAAAGFAveTBgVrYDc="
 											},
 											"font": "Arial;11;0",
-											"left": 327,
-											"top": 712,
+											"left": 367,
+											"top": 647,
 											"width": 122.86376953125,
 											"height": 11,
-											"alpha": -1.1181962077000396,
-											"distance": 61.39218191268331,
+											"alpha": -2.0421231989172792,
+											"distance": 73.10950690573696,
 											"hostEdge": {
 												"$ref": "AAAAAAGFAveTBwVsfiU="
 											},
@@ -1116,8 +1015,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 477,
-											"top": 712,
+											"left": 502,
+											"top": 714,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1137,8 +1036,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 434,
-											"top": 698,
+											"left": 461,
+											"top": 697,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1156,7 +1055,7 @@
 										"$ref": "AAAAAAGFAvW3fgUPkbU="
 									},
 									"lineStyle": 1,
-									"points": "472:643;427:775",
+									"points": "503:643;447:775",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAveTBwVtoJ8="
@@ -1188,12 +1087,12 @@
 												"$ref": "AAAAAAGFAvgviAV/MRs="
 											},
 											"font": "Arial;10;0",
-											"left": 493,
-											"top": 710,
-											"width": 139.4775390625,
+											"left": 520,
+											"top": 647,
+											"width": 143,
 											"height": 10,
-											"alpha": 1.1939384290320996,
-											"distance": 67.26812023536856,
+											"alpha": 1.991313089711404,
+											"distance": 77.83315488916018,
 											"hostEdge": {
 												"$ref": "AAAAAAGFAvgviAWAO+o="
 											},
@@ -1211,8 +1110,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 524,
-											"top": 694,
+											"left": 565,
+											"top": 691,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1232,8 +1131,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 481,
-											"top": 707,
+											"left": 524,
+											"top": 708,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1251,7 +1150,7 @@
 										"$ref": "AAAAAAGFAvW3fgUPkbU="
 									},
 									"lineStyle": 1,
-									"points": "478:643;515:775",
+									"points": "511:643;566:775",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAvgviAWBySA="
@@ -1274,7 +1173,7 @@
 									},
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 464,
+									"left": 488,
 									"top": 928,
 									"width": 26,
 									"height": 26
@@ -1300,8 +1199,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 465,
-											"top": 878,
+											"left": 486,
+											"top": 877,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -1321,8 +1220,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 478,
-											"top": 871,
+											"left": 499,
+											"top": 870,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1342,8 +1241,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 438,
-											"top": 891,
+											"left": 459,
+											"top": 892,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1361,7 +1260,7 @@
 										"$ref": "AAAAAAGFAvbrZgVLKIA="
 									},
 									"lineStyle": 1,
-									"points": "434:856;470:927",
+									"points": "453:856;493:927",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAvk/FQWg7kU="
@@ -1394,8 +1293,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 508,
-											"top": 890,
+											"left": 544,
+											"top": 893,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -1415,8 +1314,8 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 522,
-											"top": 895,
+											"left": 557,
+											"top": 901,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 30,
@@ -1436,8 +1335,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 481,
-											"top": 879,
+											"left": 519,
+											"top": 876,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 15,
@@ -1455,7 +1354,7 @@
 										"$ref": "AAAAAAGFAvZ95wUuAEI="
 									},
 									"lineStyle": 1,
-									"points": "510:856;481:927",
+									"points": "555:856;509:927",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAvlV6QWx4WA="
@@ -1495,7 +1394,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 32,
+													"left": 80,
 													"top": 280,
 													"height": 13
 												},
@@ -1506,9 +1405,9 @@
 														"$ref": "AAAAAAGFAvOccwTXi+Q="
 													},
 													"font": "Arial;13;1",
-													"left": 437,
+													"left": 461,
 													"top": 479,
-													"width": 82.3544921875,
+													"width": 83,
 													"height": 65,
 													"text": "Brisanje naloga iz fajla registrovanih korisnika",
 													"wordWrap": true
@@ -1521,7 +1420,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 32,
+													"left": 80,
 													"top": 280,
 													"width": 86.6708984375,
 													"height": 13,
@@ -1535,16 +1434,16 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 32,
+													"left": 80,
 													"top": 280,
 													"horizontalAlignment": 1,
 													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 432,
+											"left": 456,
 											"top": 472,
-											"width": 92.3544921875,
+											"width": 93,
 											"height": 77,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAvOccwTYiqU="
@@ -1565,9 +1464,9 @@
 									},
 									"font": "Arial;13;0",
 									"containerChangeable": true,
-									"left": 432,
+									"left": 456,
 									"top": 472,
-									"width": 92.3544921875,
+									"width": 93,
 									"height": 93,
 									"nameCompartment": {
 										"$ref": "AAAAAAGFAvOccwTXi+Q="
@@ -1615,7 +1514,7 @@
 													"font": "Arial;13;1",
 													"left": 429,
 													"top": 327,
-													"width": 90.3017578125,
+													"width": 92,
 													"height": 78,
 													"text": "Pita administratora da li je siguran da zeli obrisati nalog",
 													"wordWrap": true
@@ -1651,7 +1550,7 @@
 											"font": "Arial;13;0",
 											"left": 424,
 											"top": 320,
-											"width": 100.3017578125,
+											"width": 102,
 											"height": 90,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAGFAvvL9AX/608="
@@ -1674,7 +1573,7 @@
 									"containerChangeable": true,
 									"left": 424,
 									"top": 320,
-									"width": 100.3017578125,
+									"width": 102,
 									"height": 106,
 									"nameCompartment": {
 										"$ref": "AAAAAAGFAvvL9AX+EfU="
@@ -1703,7 +1602,7 @@
 											"font": "Arial;13;0",
 											"left": 247,
 											"top": 357,
-											"width": 104.98388671875,
+											"width": 105,
 											"height": 13,
 											"alpha": -3.7501505469337415,
 											"distance": 28.30194339616981,
@@ -1764,7 +1663,7 @@
 										"$ref": "AAAAAAGFAvDU/ASWtSU="
 									},
 									"lineStyle": 1,
-									"points": "223:384;423:374",
+									"points": "223:384;423:375",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAvyWPQYf8/s="
@@ -1909,9 +1808,9 @@
 												"$ref": "AAAAAAGFAv3eXAZKMYA="
 											},
 											"font": "Arial;13;0",
-											"left": 322,
+											"left": 334,
 											"top": 494,
-											"width": 18.05908203125,
+											"width": 19,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -1932,7 +1831,7 @@
 											},
 											"visible": null,
 											"font": "Arial;13;0",
-											"left": 331,
+											"left": 343,
 											"top": 479,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -1953,7 +1852,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 330,
+											"left": 342,
 											"top": 523,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -1972,7 +1871,7 @@
 										"$ref": "AAAAAAGFAvx9BAYaAcQ="
 									},
 									"lineStyle": 1,
-									"points": "231:513;431:517",
+									"points": "231:513;455:517",
 									"showVisibility": true,
 									"nameLabel": {
 										"$ref": "AAAAAAGFAv3eXQZM/8U="
@@ -2094,19 +1993,118 @@
 									"propertyLabel": {
 										"$ref": "AAAAAAGFAwQRIQc13q4="
 									}
+								},
+								{
+									"_type": "UMLActionView",
+									"_id": "AAAAAAGFAvZ95wUuAEI=",
+									"_parent": {
+										"$ref": "AAAAAAGFAus9awPq6sI="
+									},
+									"model": {
+										"$ref": "AAAAAAGFAvZ95wUsiYE="
+									},
+									"subViews": [
+										{
+											"_type": "UMLNameCompartmentView",
+											"_id": "AAAAAAGFAvZ95wUv/fM=",
+											"_parent": {
+												"$ref": "AAAAAAGFAvZ95wUuAEI="
+											},
+											"model": {
+												"$ref": "AAAAAAGFAvZ95wUsiYE="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAGFAvZ96AUwa00=",
+													"_parent": {
+														"$ref": "AAAAAAGFAvZ95wUv/fM="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 104,
+													"top": 480,
+													"height": 13
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAGFAvZ96AUxZmk=",
+													"_parent": {
+														"$ref": "AAAAAAGFAvZ95wUv/fM="
+													},
+													"font": "Arial;13;1",
+													"left": 549,
+													"top": 783,
+													"width": 68.62451171875,
+													"height": 52,
+													"text": "Ispisivanje forme o uspjesnom brisanju",
+													"wordWrap": true
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAGFAvZ96AUygnE=",
+													"_parent": {
+														"$ref": "AAAAAAGFAvZ95wUv/fM="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 104,
+													"top": 480,
+													"width": 86.6708984375,
+													"height": 13,
+													"text": "(from Sistem)"
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAGFAvZ96AUz2O4=",
+													"_parent": {
+														"$ref": "AAAAAAGFAvZ95wUv/fM="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 104,
+													"top": 480,
+													"horizontalAlignment": 1,
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 544,
+											"top": 776,
+											"width": 78.62451171875,
+											"height": 64,
+											"stereotypeLabel": {
+												"$ref": "AAAAAAGFAvZ96AUwa00="
+											},
+											"nameLabel": {
+												"$ref": "AAAAAAGFAvZ96AUxZmk="
+											},
+											"namespaceLabel": {
+												"$ref": "AAAAAAGFAvZ96AUygnE="
+											},
+											"propertyLabel": {
+												"$ref": "AAAAAAGFAvZ96AUz2O4="
+											}
+										}
+									],
+									"containerView": {
+										"$ref": "AAAAAAGFAuuwSgQY684="
+									},
+									"font": "Arial;13;0",
+									"containerChangeable": true,
+									"left": 544,
+									"top": 776,
+									"width": 78.62451171875,
+									"height": 80,
+									"nameCompartment": {
+										"$ref": "AAAAAAGFAvZ95wUv/fM="
+									},
+									"wordWrap": true
 								}
 							]
 						}
 					],
 					"nodes": [
-						{
-							"_type": "UMLAction",
-							"_id": "AAAAAAGFAvZ95wUsiYE=",
-							"_parent": {
-								"$ref": "AAAAAAGFAus9awPpSXU="
-							},
-							"name": "Ispisivanje forme o uspjesnom brisanju"
-						},
 						{
 							"_type": "UMLAction",
 							"_id": "AAAAAAGFAvbrZgVJI+w=",
@@ -2572,6 +2570,14 @@
 										"$ref": "AAAAAAGFAuugfwQEdTo="
 									},
 									"name": "Pita administratora da li je siguran da zeli obrisati nalog"
+								},
+								{
+									"_type": "UMLAction",
+									"_id": "AAAAAAGFAvZ95wUsiYE=",
+									"_parent": {
+										"$ref": "AAAAAAGFAuugfwQEdTo="
+									},
+									"name": "Ispisivanje forme o uspjesnom brisanju"
 								}
 							]
 						}
