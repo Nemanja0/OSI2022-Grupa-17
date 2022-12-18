@@ -921,7 +921,7 @@
 									"font": "Arial;13;0",
 									"left": 329,
 									"top": 236.5,
-									"width": 119,
+									"width": 118,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/N94FvcnkPg="
@@ -2266,7 +2266,7 @@
 									"font": "Arial;13;0",
 									"left": 286.5,
 									"top": 748.5,
-									"width": 108,
+									"width": 107,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/OHDB/ke0JU="
@@ -3410,7 +3410,7 @@
 									"font": "Arial;13;0",
 									"left": 640.5,
 									"top": 610,
-									"width": 195,
+									"width": 194.9326171875,
 									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/OV17fwzveI="
@@ -4917,11 +4917,12 @@
 												"$ref": "AAAAAAGE/OtlJARTQXA="
 											},
 											"font": "Arial;13;1",
-											"left": 832.5,
-											"top": 291.5,
-											"width": 81,
-											"height": 13,
-											"text": "Ponistavanje"
+											"left": 837,
+											"top": 297,
+											"width": 103,
+											"height": 39,
+											"text": "Pregled ponistenih ulaznica",
+											"wordWrap": true
 										},
 										{
 											"_type": "LabelView",
@@ -4947,15 +4948,15 @@
 											"font": "Arial;13;0",
 											"left": 288,
 											"top": 16,
-											"height": 13,
-											"horizontalAlignment": 1
+											"horizontalAlignment": 1,
+											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 827.5,
-									"top": 284.5,
-									"width": 92,
-									"height": 25,
+									"left": 832,
+									"top": 290,
+									"width": 113,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/OtlJARUOMk="
 									},
@@ -5054,11 +5055,12 @@
 							"containerChangeable": true,
 							"left": 808,
 							"top": 280,
-							"width": 130,
-							"height": 35,
+							"width": 161,
+							"height": 72,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE/OtlJARTQXA="
 							},
+							"wordWrap": true,
 							"suppressAttributes": true,
 							"suppressOperations": true,
 							"attributeCompartment": {
@@ -5288,7 +5290,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 819,
+									"left": 813,
 									"top": 276,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -5308,8 +5310,8 @@
 										"$ref": "AAAAAAGE/Oz8BQvOuUM="
 									},
 									"font": "Arial;13;0",
-									"left": 847,
-									"top": 255,
+									"left": 842,
+									"top": 257,
 									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 3.8851212361590304,
@@ -5331,7 +5333,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 836,
+									"left": 830,
 									"top": 251,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -5350,7 +5352,7 @@
 								"$ref": "AAAAAAGE/OtlJARSnE0="
 							},
 							"lineStyle": 1,
-							"points": "843:279;814:261",
+							"points": "836:279;809:261",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE/Oz8BgvR19I="
@@ -6415,9 +6417,9 @@
 											},
 											"font": "Arial;13;1",
 											"left": 632.5,
-											"top": 478,
+											"top": 484.5,
 											"width": 82,
-											"height": 26,
+											"height": 13,
 											"text": "Citanje opisa",
 											"wordWrap": true
 										},
@@ -6451,9 +6453,9 @@
 									],
 									"font": "Arial;13;0",
 									"left": 627.5,
-									"top": 471,
+									"top": 477.5,
 									"width": 92,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/PCY+hjyEOI="
 									},
@@ -7962,7 +7964,7 @@
 											"font": "Arial;13;0",
 											"left": -80,
 											"top": -112,
-											"width": 72,
+											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -7983,7 +7985,7 @@
 									"font": "Arial;13;0",
 									"left": 346,
 									"top": 164.5,
-									"width": 85,
+									"width": 84,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/ciYPGBAe0A="
@@ -8161,7 +8163,7 @@
 											"font": "Arial;13;0",
 											"left": -176,
 											"top": -176,
-											"width": 72,
+											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -8530,7 +8532,6 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGE/cpnfIkzngc="
 							},
-							"showEndOrder": "hide",
 							"tailRoleNameLabel": {
 								"$ref": "AAAAAAGE/cpnfIk0YFo="
 							},
@@ -8599,7 +8600,7 @@
 									"font": "Arial;13;0",
 									"left": 390,
 									"top": 206,
-									"width": 53,
+									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -8694,7 +8695,7 @@
 									"font": "Arial;13;0",
 									"left": 341,
 									"top": 725,
-									"width": 53,
+									"width": 53.49169921875,
 									"height": 13,
 									"alpha": -3.630828742924075,
 									"distance": 34.132096331752024,
@@ -8789,7 +8790,7 @@
 									"font": "Arial;13;0",
 									"left": 428,
 									"top": 738,
-									"width": 53,
+									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -8884,7 +8885,7 @@
 									"font": "Arial;13;0",
 									"left": 520,
 									"top": 745,
-									"width": 53,
+									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 0.9220271686444241,
 									"distance": 23.769728648009426,
@@ -8979,7 +8980,7 @@
 									"font": "Arial;13;0",
 									"left": 608,
 									"top": 719,
-									"width": 53,
+									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 1.8217126454122297,
 									"distance": 20.396078054371138,
@@ -9086,7 +9087,7 @@
 											"font": "Arial;13;0",
 											"left": -112,
 											"top": -32,
-											"width": 72,
+											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -9107,7 +9108,7 @@
 									"font": "Arial;13;0",
 									"left": 337.5,
 									"top": 372.5,
-									"width": 122,
+									"width": 121,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE/dxy3JtxLXk="
@@ -9474,7 +9475,6 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGE/dy1YaiJcwY="
 							},
-							"showEndOrder": "hide",
 							"tailRoleNameLabel": {
 								"$ref": "AAAAAAGE/dy1YaiK+Pg="
 							},
@@ -10066,7 +10066,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Ponistavanje",
+					"name": "Pregled ponistenih ulaznica",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
