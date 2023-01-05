@@ -1,6 +1,8 @@
 package tickets;
 
-public class Ticket {
+import java.io.Serializable;
+
+public class Ticket implements Serializable {
 	private String id, event_name, date, time, user_name;
 	private double price;
 	private boolean sold, cancelled;
