@@ -1,6 +1,9 @@
 package events;
 
-public class Event {
+import java.io.Serializable;
+
+public class Event implements Serializable {
+	
 	private String name, time, date, client_name;
 	private double price;
 	public int ticket_number;
