@@ -1,20 +1,56 @@
 package users;
 
 import java.io.Serializable;
+import java.util.Scanner;
+
+import main.Main;
 
 public abstract class User implements Serializable {
 	protected String name; 
 	protected String surname;
 	protected String username;
 	protected String password;
+	protected int number_of_login;
 	
 	public User(String name, String surname, String username, String password) {
 		this.name = name;
 		this.surname = surname;
 		this.username = username;
 		this.password = password;
+		this.number_of_login = 0;
 	}
 	
+	public void changePassword() {
+		while(true) {
+			String pass;
+			System.out.println("Please enter your current password:");
+			pass = Main.scanner.nextLine();
+			if(this.password.equals(pass) == false) {
+				System.out.println("Wrong password! Try again.");
+			}
+			else {
+				System.out.println("Please enter new password:");
+				pass = Main.scanner.nextLine();
+				if(pass.length() >= 8) {
+					System.out.println("Password successfully changed!");
+					this.password = pass;
+					break;
+				}
+				else{
+					System.out.println("Password is too short! Must be 8 characters long or higer! Try again!");
+				}
+			}
+		}
+	}
+	
+	public int getNumberOfLogin() {
+		return number_of_login;
+	}
+
+	public void setNumberOfLogin(int number_of_login) {
+		this.number_of_login = number_of_login;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -38,6 +74,15 @@ public abstract class User implements Serializable {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof User) {
+			if(((User)obj).username.equals(this.username))
+				return true;
+		}
+		return false;
 	}
 	
 }
