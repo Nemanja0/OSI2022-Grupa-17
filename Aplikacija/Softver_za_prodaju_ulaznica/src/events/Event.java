@@ -1,38 +1,37 @@
 package events;
 
 import java.io.Serializable;
+import users.Client;
+import java.util.ArrayList;
+import tickets.Ticket;
 
 public class Event implements Serializable {
 	
-	private String name, time, date, client_name;
+	private Client event_creator;
+	private String name, time, date;
+	private String description;
 	private double price;
-	public int ticket_number;
+	private int num_of_tickets;
 	private boolean on_name;
+	private ArrayList<Ticket> bought_tickets = new ArrayList<>();
 	
-	public Event(String name, String time, String date, double price, boolean on_name, int ticket_number, String client_name) {
+	public Event(String name, String time, String date, String description, double price, boolean on_name, int num_of_tickets, Client event_creator) {
 		this.name = name;
 		this.time = time;
 		this.date = date;
+		this.description = description;
 		this.price = price;
 		this.on_name = on_name;
-		this.ticket_number = ticket_number;
-		this.client_name = client_name;
+		this.num_of_tickets = num_of_tickets;
+		this.event_creator = event_creator;
 	}
 
-	public String getClientName() {
-		return client_name;
+	public Client getEventCreator() {
+		return event_creator;
 	}
 
-	public void setClientName(String client_name) {
-		this.client_name = client_name;
-	}
-
-	public int getTicketNumber() {
-		return ticket_number;
-	}
-
-	public void setTicketNumber(int ticket_number) {
-		this.ticket_number = ticket_number;
+	public void setEventCreator(Client event_creator) {
+		this.event_creator = event_creator;
 	}
 
 	public String getName() {
@@ -74,6 +73,21 @@ public class Event implements Serializable {
 	public void setOnName(boolean on_name) {
 		this.on_name = on_name;
 	}
-	
+
+	public int getNumOfTickets() {
+		return num_of_tickets;
+	}
+
+	public void setNumOfTickets(int num_of_tickets) {
+		this.num_of_tickets = num_of_tickets;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 }
