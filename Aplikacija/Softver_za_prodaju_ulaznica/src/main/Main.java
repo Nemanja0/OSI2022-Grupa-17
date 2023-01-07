@@ -127,6 +127,8 @@ public class Main {
 		}
 		else {
 			users.add(new RegularUser(name, surname, username, password));
+			new File(users_filename + "/" + username).mkdir();
+			new File(users_filename + "/" + username + "/ulaznice").mkdir();
 		}
 		return true;
 	}
