@@ -79,6 +79,15 @@ public class Main {
 		}
 		return true;
 	}
+	
+	public static Event checkEvent(String event) {
+		for(Event ev : events) {
+			if(ev.getName().equals(event))
+				return ev;
+		}
+		return null;
+	}
+	
 	public static boolean checkUsername(String username) {
 		for(User usr : users) {
 			if (usr.getUsername().equals(username))

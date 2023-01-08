@@ -90,4 +90,8 @@ public class Event implements Serializable {
 		this.description = description;
 	}
 	
+	public void deleteAllTickets() {
+		this.bought_tickets.clear();
+	}
+	
 }
