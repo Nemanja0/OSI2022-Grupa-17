@@ -5,17 +5,15 @@ import java.io.Serializable;
 public class Ticket implements Serializable {
 	private String id, event_name, date, time, user_name;
 	private double price;
-	private boolean sold, cancelled, electronically;
+	private boolean cancelled, electronically;
 	
-	public Ticket(String id, String event_name, String date, String time, String user_name, double price, boolean sold, boolean cancelled, boolean electronically){
+	public Ticket(String id, String event_name, String date, String time, String user_name, double price, boolean electronically){
 		this.id = id;
 		this.event_name = event_name;
 		this.date = date;
 		this.time = time;
 		this.user_name = user_name;
 		this.price = price;
-		this.sold = sold;
-		this.cancelled = cancelled;
 		this.electronically = electronically;
 	}
 
@@ -25,14 +23,6 @@ public class Ticket implements Serializable {
 
 	public void setElectronically(boolean electronically) {
 		this.electronically = electronically;
-	}
-
-	public boolean isSold() {
-		return sold;
-	}
-
-	public void setSold(boolean sold) {
-		this.sold = sold;
 	}
 
 	public boolean isCancelled() {
@@ -91,5 +81,15 @@ public class Ticket implements Serializable {
 		this.price = price;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String res = "========================== TICKET ======================\n";
+		res += "Event name: " + this.event_name + "\n";
+		res += "Ticket ID: " + this.id + "\n";
+		res += "Date and time: " + this.date + " " + this.time + "\n";
+		res += "Price: " + this.price + "\n";
+		res += "Bought by user: " + this.user_name + "\n";
+		res += "========================================================";
+		return res;
+	}
 }
