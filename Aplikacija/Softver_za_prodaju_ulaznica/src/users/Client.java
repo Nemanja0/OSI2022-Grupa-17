@@ -50,7 +50,7 @@ public class Client extends User {
 				System.out.println("Event creation cancelled !");
 				return;
 			}
-			if(this.checkDateValidity(date))
+			if(Main.checkDateValidity(date))
 				break;
 			else
 				System.out.println("Invalid input. Try again.");
@@ -62,7 +62,7 @@ public class Client extends User {
 				System.out.println("Event creation cancelled !");
 				return;
 			}
-			if(this.checkTimeValidity(time))
+			if(Main.checkTimeValidity(time))
 				break;
 			else
 				System.out.println("Invalid input. Try again.");
@@ -117,82 +117,44 @@ public class Client extends User {
 		return;
 	}
 	
-	private boolean checkTimeValidity(String time) {
-		String splitter[] = time.split(":");
-		if(splitter.length != 2)
-			return false;
-		int hours, minutes;
-		try {
-			if(splitter[0].charAt(0) == '0')
-				splitter[0] = splitter[0].substring(1);
-			hours = Integer.parseInt(splitter[0]);
-			if(hours < 0 || hours > 24)
-				return false;
-			if(splitter[1].charAt(0) == '0')
-				splitter[1] = splitter[1].substring(1);
-			minutes = Integer.parseInt(splitter[1]);
-			if(minutes < 0 || minutes > 60)
-				return false;
-			return true;
+	public void browseSoldTickets() {
+		Event target = null;
+		for(Event e : Main.events)
+			if(e.getEventCreator().equals(this)) {
+				target = e;
+				break;
+			}
+		if(target != null) {
+			target.getBoughtTickets().stream().filter(x -> !x.isCancelled()).forEach(System.out::println);
 		}
-		catch(Exception ex) {
-			return false;
+		boolean end = false;
+		while(!end) {
+			String option;
+			System.out.println("\nIf you want to search for sellings for certain date type: SEARCH");
+			System.out.println("If you want to search for cancelled tickets type: CANCEL");
+			System.out.println("To exit type: EXIT");
+			option = Main.scanner.nextLine();
+			switch(option) {
+				case "SEARCH":
+					System.out.println("Enter the desired date:");
+					String date = Main.scanner.nextLine();
+					if(Main.checkDateValidity(date)) {
+						target.getBoughtTickets().stream().filter(x -> x.getDate().equals(date)).forEach(System.out::println);
+					}
+					else
+						System.out.println("Invalid input ! Try again.");
+					break;
+				case "CANCEL":
+					target.getBoughtTickets().stream().filter(x -> x.isCancelled()).forEach(System.out::println);
+					break;
+				case "EXIT":
+					end = true;
+					break;
+				default:
+					System.out.println("Invalid input ! Try again.");
+			}
 		}
+		
 	}
 	
-	private boolean checkDateValidity(String date) {
-		String splitter[] = date.split(".");
-		if(splitter.length != 3)
-			return false;
-		int day,month,year;
-		try {
-			if(splitter[1].charAt(0) == '0')
-				splitter[1] = splitter[1].substring(1);
-			month = Integer.parseInt(splitter[1]);
-			if(month < 0 || month > 12)
-				return false;
-			int allowed_day = this.getAllowedDay(month);
-			if(splitter[0].charAt(0) == '0')
-				splitter[0] = splitter[0].substring(1);
-			day = Integer.parseInt(splitter[1]);
-			if(day < 0 || day > allowed_day)
-				return false;
-			year = Integer.parseInt(splitter[2]);
-			if(year < Calendar.getInstance().get(Calendar.YEAR))
-				return false;
-			return true;
-		}
-		catch(Exception ex) {
-			return false;
-		}
-	}
-	
-	private int getAllowedDay(int month) {
-		switch(month){
-			case 1:
-				return 31;
-			case 2:
-				return 28;
-			case 3:
-				return 31;
-			case 4:
-				return 30;
-			case 5:
-				return 31;
-			case 6:
-				return 30;
-			case 7:
-				return 31;
-			case 8:
-				return 31;
-			case 9:
-				return 30;
-			case 10:
-				return 31;
-			case 11:
-				return 30;
-			default:
-				return 31;
-		}
-	}
 }

@@ -272,4 +272,83 @@ public class Main {
 			}
 		}
 	}
+	
+	public static boolean checkTimeValidity(String time) {
+		String splitter[] = time.split(":");
+		if(splitter.length != 2)
+			return false;
+		int hours, minutes;
+		try {
+			if(splitter[0].charAt(0) == '0')
+				splitter[0] = splitter[0].substring(1);
+			hours = Integer.parseInt(splitter[0]);
+			if(hours < 0 || hours > 24)
+				return false;
+			if(splitter[1].charAt(0) == '0')
+				splitter[1] = splitter[1].substring(1);
+			minutes = Integer.parseInt(splitter[1]);
+			if(minutes < 0 || minutes > 60)
+				return false;
+			return true;
+		}
+		catch(Exception ex) {
+			return false;
+		}
+	}
+	
+	public static boolean checkDateValidity(String date) {
+		String splitter[] = date.split(".");
+		if(splitter.length != 3)
+			return false;
+		int day,month,year;
+		try {
+			if(splitter[1].charAt(0) == '0')
+				splitter[1] = splitter[1].substring(1);
+			month = Integer.parseInt(splitter[1]);
+			if(month < 0 || month > 12)
+				return false;
+			int allowed_day = getAllowedDay(month);
+			if(splitter[0].charAt(0) == '0')
+				splitter[0] = splitter[0].substring(1);
+			day = Integer.parseInt(splitter[1]);
+			if(day < 0 || day > allowed_day)
+				return false;
+			year = Integer.parseInt(splitter[2]);
+			if(year < Calendar.getInstance().get(Calendar.YEAR))
+				return false;
+			return true;
+		}
+		catch(Exception ex) {
+			return false;
+		}
+	}
+	
+	public static int getAllowedDay(int month) {
+		switch(month){
+			case 1:
+				return 31;
+			case 2:
+				return 28;
+			case 3:
+				return 31;
+			case 4:
+				return 30;
+			case 5:
+				return 31;
+			case 6:
+				return 30;
+			case 7:
+				return 31;
+			case 8:
+				return 31;
+			case 9:
+				return 30;
+			case 10:
+				return 31;
+			case 11:
+				return 30;
+			default:
+				return 31;
+		}
+	}
 }

@@ -19,7 +19,7 @@ public class Event implements Serializable {
 	private int num_of_tickets;
 	private boolean on_name;
 	private ArrayList<Ticket> bought_tickets = new ArrayList<>();
-	
+
 	public Event(String name, String time, String date, String description, double price, boolean on_name, int num_of_tickets, Client event_creator) {
 		this.name = name;
 		this.time = time;
@@ -93,6 +93,14 @@ public class Event implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public ArrayList<Ticket> getBoughtTickets() {
+		return bought_tickets;
+	}
+
+	public void setBoughtTickets(ArrayList<Ticket> bought_tickets) {
+		this.bought_tickets = bought_tickets;
 	}
 	
 	public void deleteAllTickets() {
