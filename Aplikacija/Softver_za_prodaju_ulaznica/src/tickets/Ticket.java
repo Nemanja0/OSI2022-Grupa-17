@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class Ticket implements Serializable {
 	private String id, event_name, date, time, user_name;
 	private double price;
-	private boolean sold, cancelled;
+	private boolean sold, cancelled, electronically;
 	
-	public Ticket(String id, String event_name, String date, String time, String user_name, double price, boolean sold, boolean cancelled){
+	public Ticket(String id, String event_name, String date, String time, String user_name, double price, boolean sold, boolean cancelled, boolean electronically){
 		this.id = id;
 		this.event_name = event_name;
 		this.date = date;
@@ -16,6 +16,15 @@ public class Ticket implements Serializable {
 		this.price = price;
 		this.sold = sold;
 		this.cancelled = cancelled;
+		this.electronically = electronically;
+	}
+
+	public boolean isElectronically() {
+		return electronically;
+	}
+
+	public void setElectronically(boolean electronically) {
+		this.electronically = electronically;
 	}
 
 	public boolean isSold() {

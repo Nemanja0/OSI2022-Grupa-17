@@ -10,6 +10,27 @@ public class Client extends User {
 		super(name,surname,username,password);
 	}
 	
+	public void cancelEvent() {
+		String event_name;
+		Event event;
+		System.out.println("Welcome to the event cancellation. Please give the following information or cancel event cancellation by typing EXIT.\n");
+		System.out.println("Type a name of event that you want to cancel:");
+		while(true) {
+			event_name = Main.scanner.nextLine();
+			if("EXIT".equals(event_name)) {
+				System.out.println("Event cancellation cancelled!");
+				return;
+			}
+			event = Main.checkEvent(event_name);
+			if(event != null)
+				break;
+			System.out.println("Event does not exist!");
+		}
+		event.deleteAllTickets();
+		Main.events.remove(event);
+		System.out.println("Event successfuly cancelled!");
+	}
+	
 	public void createEvent() {
 		String tmp, name, time, date, description;
 		double price;

@@ -2,7 +2,12 @@ package events;
 
 import java.io.Serializable;
 import users.Client;
+import users.RegularUser;
+import users.User;
+
 import java.util.ArrayList;
+
+import main.Main;
 import tickets.Ticket;
 
 public class Event implements Serializable {
@@ -88,6 +93,15 @@ public class Event implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public void deleteAllTickets() {
+		bought_tickets.stream().forEach(x -> {
+			if(x.isElectronically()) {
+				RegularUser usr = (RegularUser) Main.users.stream().filter(y -> y.getUsername().equals(x.getUserName())).findFirst().get();
+				usr.addCredits(x.getPrice());	
+			}
+		});
 	}
 	
 }
