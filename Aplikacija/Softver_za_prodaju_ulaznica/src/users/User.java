@@ -76,44 +76,6 @@ public abstract class User implements Serializable {
 		this.password = password;
 	}
 	
-	public void browseEvents() {
-		System.out.println("~~~ Upcoming events ~~~\n");
-		Main.events.stream().forEach(System.out::println);
-		boolean end = false;
-		while(!end) {
-			String option = null;
-			System.out.println("\nIf you want detailed info for any event type INFO");
-			System.out.println("If you want description for any event type DESC");
-			System.out.println("If you want to exit type EXIT");
-			option = Main.scanner.nextLine();
-			boolean info = "INFO".equals(option);
-			boolean desc = "DESC".equals(option);
-			if(info || desc) {
-				Event target = null;
-				System.out.println("Enter name of the desired event:");
-				option = Main.scanner.nextLine();
-				for(Event ev : Main.events) {
-					if(ev.getName().equals(option)) {
-						target = ev;
-						break;
-					}
-				}
-				if(target == null)
-					System.out.println("Invalid input ! Try again.");
-				else {
-					if(info)
-						target.printEventInfo();
-					else
-						System.out.println(target.getDescription());
-				}
-			}		
-			else if("EXIT".equals(option))
-				end = true;
-			else 
-				System.out.println("Invalid input ! Try again.");
-		}
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if(obj != null && obj instanceof User) {
