@@ -1,7 +1,7 @@
 package users;
 
 import java.io.Serializable;
-import java.util.Scanner;
+import events.Event;
 
 import main.Main;
 
@@ -37,7 +37,7 @@ public abstract class User implements Serializable {
 					break;
 				}
 				else{
-					System.out.println("Password is too short! Must be 8 characters long or higer! Try again!");
+					System.out.println("Password is too short! Must be 8 characters long or longer! Try again!");
 				}
 			}
 		}
@@ -74,6 +74,44 @@ public abstract class User implements Serializable {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public void browseEvents() {
+		System.out.println("~~~ Upcoming events ~~~\n");
+		Main.events.stream().forEach(System.out::println);
+		boolean end = false;
+		while(!end) {
+			String option = null;
+			System.out.println("\nIf you want detailed info for any event type INFO");
+			System.out.println("If you want description for any event type DESC");
+			System.out.println("If you want to exit type EXIT");
+			option = Main.scanner.nextLine();
+			boolean info = "INFO".equals(option);
+			boolean desc = "DESC".equals(option);
+			if(info || desc) {
+				Event target = null;
+				System.out.println("Enter name of the desired event:");
+				option = Main.scanner.nextLine();
+				for(Event ev : Main.events) {
+					if(ev.getName().equals(option)) {
+						target = ev;
+						break;
+					}
+				}
+				if(target == null)
+					System.out.println("Invalid input ! Try again.");
+				else {
+					if(info)
+						target.printEventInfo();
+					else
+						System.out.println(target.getDescription());
+				}
+			}		
+			else if("EXIT".equals(option))
+				end = true;
+			else 
+				System.out.println("Invalid input ! Try again.");
+		}
 	}
 	
 	@Override
