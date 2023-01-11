@@ -87,7 +87,7 @@ public class Ticket implements Serializable {
 		res += "Event name: " + this.event_name + "\n";
 		res += "Ticket ID: " + this.id + "\n";
 		res += "Date and time: " + this.date + " " + this.time + "\n";
-		res += "Price: " + this.price + "\n";
+		res += "Price: " + this.price + "$\n";
 		res += "Bought by user: " + this.user_name + "\n";
 		res += "========================================================";
 		return res;

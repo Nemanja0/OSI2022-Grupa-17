@@ -3,8 +3,6 @@ package events;
 import java.io.Serializable;
 import users.Client;
 import users.RegularUser;
-import users.User;
-
 import java.util.ArrayList;
 
 import main.Main;
@@ -110,6 +108,24 @@ public class Event implements Serializable {
 				usr.addCredits(x.getPrice());	
 			}
 		});
+	}
+	
+	public void printEventInfo() {
+		System.out.println("\nInformation about event - " + this.name + "\n");
+		System.out.println("Date and time: " + this.date + " " + this.time + "\n");
+		System.out.println("Event host: " + this.event_creator.getUsername() + 
+						   " (" + this.event_creator.getName() + " " + this.event_creator.getSurname() + ")\n");
+		System.out.println("Ticket price: " + this.price + "$\n");
+		System.out.println("Tickets left: " + this.num_of_tickets + "\n");
+	} 
+	
+	@Override
+	public String toString() {
+		String ans = "===================== EVENT =====================\n";
+		ans += "Event name: " + this.name + "\n";
+		ans += "Date and time: " + this.date + " " + this.time + "\n";
+		ans += "================================================";
+		return ans;
 	}
 	
 }
