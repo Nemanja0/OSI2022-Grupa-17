@@ -131,13 +131,36 @@ public class Main {
 				}
 			}
 		}
-		if(first_run) {
-			users.add(new Administrator(name, surname, username, password));
+		if(current_user != null) {
+			while(true) {
+				System.out.println("If you want to create administrator account type ADMIN");
+				System.out.println("If you want to create client account type CLIENT");
+				System.out.println("If you want to exit type EXIT");
+				String option = Main.scanner.nextLine();
+				switch(option) {
+					case "ADMIN":
+						users.add(new Administrator(name, surname, username, password));
+						break;
+					case "CLIENT":
+						users.add(new Client(name, surname, username, password));
+						break;
+					case "EXIT":
+						return false;
+					default:
+						System.out.println("Invalid input ! Try again.");
+						break;
+				}
+			}
 		}
 		else {
-			users.add(new RegularUser(name, surname, username, password));
-			new File(users_filename + "/" + username).mkdir();
-			new File(users_filename + "/" + username + "/ulaznice").mkdir();
+			if(first_run) {
+				users.add(new Administrator(name, surname, username, password));
+			}
+			else {
+				users.add(new RegularUser(name, surname, username, password));
+				new File(users_filename + "/" + username).mkdir();
+				new File(users_filename + "/" + username + "/ulaznice").mkdir();
+			}
 		}
 		return true;
 	}
