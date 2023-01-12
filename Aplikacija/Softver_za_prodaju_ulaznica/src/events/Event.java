@@ -101,6 +101,10 @@ public class Event implements Serializable {
 		this.bought_tickets = bought_tickets;
 	}
 	
+	public void addBoughtTicket(Ticket t) {
+		this.bought_tickets.add(t);
+	}
+	
 	public void deleteAllTickets() {
 		bought_tickets.stream().forEach(x -> {
 			if(x.isElectronically()) {

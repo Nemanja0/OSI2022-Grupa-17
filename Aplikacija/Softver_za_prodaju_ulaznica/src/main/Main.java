@@ -123,7 +123,7 @@ public class Main {
 				break;
 			else{
 				String yes_no;
-				System.out.println("Password is too short! Must be 8 characters long or higer!");
+				System.out.println("Password is too short! Must be 8 characters long or longer!");
 				System.out.println("Try again?(yes, no)");
 				yes_no = scanner.nextLine();
 				if("yes".equals(yes_no) == false) {
@@ -158,8 +158,6 @@ public class Main {
 			}
 			else {
 				users.add(new RegularUser(name, surname, username, password));
-				new File(users_filename + "/" + username).mkdir();
-				new File(users_filename + "/" + username + "/ulaznice").mkdir();
 			}
 		}
 		return true;
