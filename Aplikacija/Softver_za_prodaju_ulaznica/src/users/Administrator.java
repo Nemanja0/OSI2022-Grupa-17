@@ -29,8 +29,10 @@ public class Administrator extends User {
 				case "2":
 					break;
 				case "3":
+					this.deleteUserAccount();
 					break;
 				case "4":
+					this.cancelAccountPassword();
 					break;
 				case "5":
 					end = true;
@@ -38,7 +40,6 @@ public class Administrator extends User {
 					break;
 				default:
 					System.out.println("Invalid input ! Try again.");
-					break;
 			}
 		}
 	}
@@ -75,6 +76,76 @@ public class Administrator extends User {
 				else {
 					System.out.println("The event has not been blocked!");
 					break;
+				}
+			}
+		}
+	}
+	
+	public void cancelAccountPassword() {
+		while(true) {
+			String option = null;
+			User target = null;
+			System.out.println("Enter username of desired account to cancel its password, or EXIT to quit:");
+			option = Main.scanner.nextLine();
+			if("EXIT".equals(option)) {
+				System.out.println("Password cancellation cancelled.");
+				return;
+			}
+			else {
+				for(User u : Main.users)
+					if(u.getUsername().equals(option)) {
+						target = u;
+						break;
+					}
+				if(target == null)
+					System.out.println("Entered username doesen't exist. Try again.");
+				else {
+					System.out.println("Are you sure you want to cancel this users password ? (YES, NO)");
+					String yes_no = Main.scanner.nextLine();
+					if("YES".equals(yes_no)) {
+						target.setPasswordCancelled(true);
+						System.out.println("Password cancellation successfull.");
+						break;
+					}
+					else {
+						System.out.println("Password cancellation cancelled.");
+						return;
+					}
+				}
+			}
+		}
+	}
+	
+	public void deleteUserAccount() {
+		while(true) {
+			String option = null;
+			User target = null;
+			System.out.println("Enter username of desired account to delete, or EXIT to quit:");
+			option = Main.scanner.nextLine();
+			if("EXIT".equals(option)) {
+				System.out.println("Account deletion cancelled.");
+				return;
+			}
+			else {
+				for(User u : Main.users)
+					if(u.getUsername().equals(option)) {
+						target = u;
+						break;
+					}
+				if(target == null)
+					System.out.println("Entered username doesen't exist. Try again.");
+				else {
+					System.out.println("Are you sure you want to delete this users account ? (YES, NO)");
+					String yes_no = Main.scanner.nextLine();
+					if("YES".equals(yes_no)) {
+						Main.users.remove(target);
+						System.out.println("Account deletion successfull.");
+						break;
+					}
+					else {
+						System.out.println("Account deletion cancelled.");
+						return;
+					}
 				}
 			}
 		}

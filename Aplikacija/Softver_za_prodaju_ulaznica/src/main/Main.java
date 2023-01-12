@@ -16,6 +16,8 @@ public class Main {
 	public static User current_user = null;
 	public static ArrayList<User> users = new ArrayList<>();
 	public static ArrayList<Event> events = new ArrayList<>();
+	public static ArrayList<String> blocked_usernames = new ArrayList<>();
+	public static ArrayList<String> block_reasons= new ArrayList<>();
 	public static boolean first_run = false;
 	public static Scanner scanner = new Scanner(System.in);
 	
@@ -70,6 +72,12 @@ public class Main {
 			if("yes".equals(yes_no) == false) {
 				return false;
 			}
+		}
+		if(current_user.isPasswordCancelled()) {
+			System.out.println("ALERT: Your password has been cancelled by an administrator !");
+			System.out.println("You have to change your password to continue.");
+			current_user.changePassword();
+			current_user.setPasswordCancelled(false);
 		}
 		current_user.setNumberOfLogin(current_user.getNumberOfLogin()+1);
 		if(current_user.getNumberOfLogin() == max_login) {

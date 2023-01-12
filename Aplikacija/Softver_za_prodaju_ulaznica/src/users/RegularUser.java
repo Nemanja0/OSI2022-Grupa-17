@@ -141,7 +141,6 @@ public class RegularUser extends User {
 				String yes_no = Main.scanner.nextLine();
 				if("YES".equals(yes_no)) {
 					this.purchased_tickets.remove(target);
-					target.setCancelled(true);
 					if(target.isElectronically())
 						this.addCredits(target.getPrice());
 					target.setCancelled(true);
