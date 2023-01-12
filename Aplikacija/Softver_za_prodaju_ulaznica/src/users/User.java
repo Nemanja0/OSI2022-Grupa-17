@@ -11,6 +11,7 @@ public abstract class User implements Serializable {
 	protected String username;
 	protected String password;
 	protected int number_of_login;
+	protected boolean password_cancelled;
 	
 	public User(String name, String surname, String username, String password) {
 		this.name = name;
@@ -18,8 +19,17 @@ public abstract class User implements Serializable {
 		this.username = username;
 		this.password = password;
 		this.number_of_login = 0;
+		this.password_cancelled = false;
 	}
 	
+	public boolean isPasswordCancelled() {
+		return password_cancelled;
+	}
+
+	public void setPasswordCancelled(boolean password_cancelled) {
+		this.password_cancelled = password_cancelled;
+	}
+
 	public void changePassword() {
 		while(true) {
 			String pass;
@@ -34,6 +44,7 @@ public abstract class User implements Serializable {
 				if(pass.length() >= 8) {
 					System.out.println("Password successfully changed!");
 					this.password = pass;
+					this.number_of_login = 0;
 					break;
 				}
 				else{
