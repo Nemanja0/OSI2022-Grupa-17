@@ -14,4 +14,30 @@ public class Administrator extends User {
 		else
 			System.out.println("Account has not been created!");
 	}
+	
+	public void accountManagement() {
+		boolean end = false;
+		System.out.println("Choose one of the following options.");
+		System.out.println("1. Suspension\n2. Activate account\n3. Delete account\n4. Password cancellation\n5. Exit");
+		while(!end) {
+			String option = Main.scanner.nextLine();
+			switch(option) {
+				case "1":
+					break;
+				case "2":
+					break;
+				case "3":
+					break;
+				case "4":
+					break;
+				case "5":
+					end = true;
+					System.out.println("Exiting ...");
+					break;
+				default:
+					System.out.println("Invalid input ! Try again.");
+					break;
+			}
+		}
+	}
 }
