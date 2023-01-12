@@ -137,7 +137,7 @@ public class RegularUser extends User {
 			if(target == null)
 				System.out.println("Invalid input ! Try again.");
 			else {
-				System.out.println("Are you sure?");
+				System.out.println("Are you sure? (YES, NO)");
 				String yes_no = Main.scanner.nextLine();
 				if("YES".equals(yes_no)) {
 					this.purchased_tickets.remove(target);
