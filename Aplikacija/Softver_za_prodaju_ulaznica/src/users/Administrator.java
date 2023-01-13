@@ -162,37 +162,44 @@ public class Administrator extends User {
 	}
 	
 	public void suspendUserAccount() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
 		while(true) {
 			String option = null;
 			User target = null;
-			System.out.println("Enter username of desired account to suspend, or EXIT to quit:");
+			System.out.println("\nEnter username of desired account to suspend, or EXIT to quit:");
 			option = Main.scanner.nextLine();
 			if("EXIT".equals(option)) {
 				System.out.println("Account suspension cancelled.");
 				return;
 			}
 			else {
-				for(User u : Main.users)
-					if(u.getUsername().equals(option)) {
-						target = u;
-						break;
-					}
-				if(target == null)
-					System.out.println("Entered username doesen't exist. Try again.");
+				if(Main.suspended_usernames.contains(option)) {
+					System.out.println("This user has already been suspended. Try again.");
+				}
 				else {
-					System.out.println("Are you sure you want to suspend this account ? (YES, NO)");
-					String yes_no = Main.scanner.nextLine();
-					if("YES".equals(yes_no)) {
-						System.out.println("Please enter the reason for suspension:");
-						String reason = Main.scanner.nextLine();
-						Main.suspend_reasons.add(reason);
-						Main.suspended_usernames.add(target.getUsername());
-						System.out.println("Account suspension successfull.");
-						break;
-					}
+					for(User u : Main.users)
+						if(u.getUsername().equals(option)) {
+							target = u;
+							break;
+						}
+					if(target == null)
+						System.out.println("Entered username doesen't exist. Try again.");
 					else {
-						System.out.println("Account suspension cancelled.");
-						return;
+						System.out.println("Are you sure you want to suspend this account ? (YES, NO)");
+						String yes_no = Main.scanner.nextLine();
+						if("YES".equals(yes_no)) {
+							System.out.println("Please enter the reason for suspension:");
+							String reason = Main.scanner.nextLine();
+							Main.suspend_reasons.add(reason);
+							Main.suspended_usernames.add(target.getUsername());
+							System.out.println("Account suspension successfull.");
+							break;
+						}
+						else {
+							System.out.println("Account suspension cancelled.");
+							return;
+						}
 					}
 				}
 			}

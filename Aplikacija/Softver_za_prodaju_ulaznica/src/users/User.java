@@ -96,4 +96,9 @@ public abstract class User implements Serializable {
 		return false;
 	}
 	
+	@Override
+	public String toString() {
+		return this.username + " (" + this.name + " " + this.surname + ")";
+	}
+	
 }
