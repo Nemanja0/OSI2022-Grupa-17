@@ -26,6 +26,14 @@ public class RegularUser extends User {
 		this.credits -= credits;
 	}
 	
+	public void addPurchasedTicket(Ticket t) {
+		this.purchased_tickets.add(t);
+	}
+	
+	public void removePurchasedTicket(Ticket t) {
+		this.purchased_tickets.remove(t);
+	}
+	
 	public void browseEvents() {
 		System.out.println("~~~ Upcoming events ~~~\n");
 		Main.events.stream().forEach(System.out::println);

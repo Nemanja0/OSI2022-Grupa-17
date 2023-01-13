@@ -107,10 +107,11 @@ public class Event implements Serializable {
 	
 	public void deleteAllTickets() {
 		bought_tickets.stream().forEach(x -> {
+			RegularUser usr = (RegularUser) Main.users.stream().filter(y -> y.getUsername().equals(x.getUserName())).findFirst().get();
 			if(x.isElectronically()) {
-				RegularUser usr = (RegularUser) Main.users.stream().filter(y -> y.getUsername().equals(x.getUserName())).findFirst().get();
 				usr.addCredits(x.getPrice());	
 			}
+			usr.removePurchasedTicket(x);
 		});
 	}
 	
