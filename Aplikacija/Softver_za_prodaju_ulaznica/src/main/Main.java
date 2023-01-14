@@ -59,22 +59,28 @@ public class Main {
 			username = scanner.nextLine();
 			System.out.println("Please enter your password:");
 			password = scanner.nextLine();
-			for(User usr : users) {
-				if (usr.getUsername().equals(username))
-					if(usr.getPassword().equals(password)) {
-						if(suspended_usernames.contains(username)) {
-							System.out.println("ALERT: Your account has been suspended by an administrator.");
-							System.out.println("Reason for suspension: " + suspend_reasons.get(suspended_usernames.indexOf(username)));
-							System.out.println("Logging in is not allowed.");
-							return false;
-						}
-						current_user = usr;
-						break;
-					}
+			if(first_run) {
+				if("admin".equals(password) && "admin".equals(username)) 
+					return true;
 			}
-			if(current_user != null)
-				break;
-			System.out.println("Invalid user or password!");
+			else {
+				for(User usr : users) {
+					if (usr.getUsername().equals(username))
+						if(usr.getPassword().equals(password)) {
+							if(suspended_usernames.contains(username)) {
+								System.out.println("ALERT: Your account has been suspended by an administrator.");
+								System.out.println("Reason for suspension: " + suspend_reasons.get(suspended_usernames.indexOf(username)));
+								System.out.println("Logging in is not allowed.");
+								return false;
+							}
+							current_user = usr;
+							break;
+						}
+				}
+				if(current_user != null)
+					break;
+			}
+			System.out.println("Invalid username or password!");
 			String yes_no;
 			System.out.println("Try again?(yes, no)");
 			yes_no = scanner.nextLine();
@@ -157,10 +163,10 @@ public class Main {
 				switch(option) {
 					case "ADMIN":
 						users.add(new Administrator(name, surname, username, password));
-						break;
+						return true;
 					case "CLIENT":
 						users.add(new Client(name, surname, username, password));
-						break;
+						return true;
 					case "EXIT":
 						return false;
 					default:
@@ -171,6 +177,7 @@ public class Main {
 		}
 		else {
 			if(first_run) {
+				first_run = false;
 				users.add(new Administrator(name, surname, username, password));
 			}
 			else {
@@ -190,6 +197,22 @@ public class Main {
 		return false;
 	}
 	
+	public static void exit() throws Exception {
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(users_filename + "/" + users_ser));
+		oos.writeObject(users);
+		oos.close();
+		oos = new ObjectOutputStream(new FileOutputStream(events_filename + "/" + events_ser));
+		oos.writeObject(events);
+		oos.close();
+		oos = new ObjectOutputStream(new FileOutputStream(suspension_filename + "/" + suspensions_ser));
+		oos.writeObject(suspended_usernames);
+		oos.close();
+		oos = new ObjectOutputStream(new FileOutputStream(suspension_filename + "/" + reasons_ser));
+		oos.writeObject(suspend_reasons);
+		oos.close();
+		System.out.println("~~~ GOODBYE ~~~");
+	}
+	
 	public static void main(String[] args) {
 		String option;
 		try {
@@ -200,7 +223,7 @@ public class Main {
 		}
 		if(first_run) {
 			System.out.println("Welcome, this is your first time entering the system.");
-			System.out.println("Please login with credentials admin/admin");
+			System.out.println("Please login with credentials admin/admin, and register a new administrator account.");
 			if(login() && register()) {
 				System.out.println("Successful first time registration.");
 			}
@@ -220,6 +243,11 @@ public class Main {
 				}
 				else {
 					System.out.println("Login failed! - exiting...");
+					try {
+						exit();
+					} catch (Exception e) {
+						System.out.println("ERROR: Error during serialization.");
+					}
 					return;
 				}
 			}
@@ -230,84 +258,124 @@ public class Main {
 				}
 				else {
 					System.out.println("Registration failed! - exiting...");
+					try {
+						exit();
+					} catch (Exception e) {
+						System.out.println("ERROR: Error during serialization.");
+					}
 					return;
 				}
 			}
 			else if("3".equals(option)) {
-				System.out.println("Goodbye!");
+				try {
+					exit();
+				} catch (Exception e) {
+					System.err.println("ERROR: Error during serialization.");
+				}
 				return;
 			}
 			else {
 				System.out.println("Wrong option! Choose again.");
 			}
 		}
-		while(true) {
+		boolean end = false;
+		while(!end) {
 			if(current_user instanceof RegularUser) {
+				RegularUser user = (RegularUser)current_user;
 				System.out.println("1. Purchase ticket\n2. Browse events\n3. Cancelling purchased tickets\n4. Change password\n5. Logout");
 				option = scanner.nextLine();
 				switch(option) {
 					case "1":
+						user.purchaseTicket();
 						break;
 					case "2":
+						user.browseEvents();
 						break;
 					case "3":
+						user.cancelPurchasedTicket();
 						break;
 					case "4":
 						current_user.changePassword();
 						break;
 					case "5":
 						if(logout()) {
+							end = true;
 							System.out.println("Logout successful!");
-							break;
 						}
+						else {
+							System.out.println("Logout cancelled!");
+						}
+						break;
 					default:
 						System.out.println("Wrong option! Choose again.");
 				}
 			}
 			else if(current_user instanceof Administrator) {
+				Administrator admin = (Administrator)current_user;
 				System.out.println("1. Accounts management\n2. Cancelling client events\n3. Create Administrator/Client account\n4. Change password\n5. Logout");
 				option = scanner.nextLine();
 				switch(option) {
 					case "1":
+						admin.accountManagement();
 						break;
 					case "2":
+						admin.blockClientsEvents();
 						break;
 					case "3":
+						admin.createAdministratorClientAccount();
 						break;
 					case "4":
 						current_user.changePassword();
 						break;
 					case "5":
 						if(logout()) {
+							end = true;
 							System.out.println("Logout successful!");
-							break;
 						}
+						else {
+							System.out.println("Logout cancelled!");
+						}
+						break;
 					default:
 						System.out.println("Wrong option! Choose again.");
 				}
 			}
 			else {
+				Client client = (Client)current_user;
 				System.out.println("1. Create event\n2. Cancel event\n3. Browse sold tickets\n4. Change password\n5. Logout");
 				option = scanner.nextLine();
 				switch(option) {
 					case "1":
+						client.createEvent();
 						break;
 					case "2":
+						client.cancelEvent();
 						break;
 					case "3":
+						client.browseSoldTickets();
 						break;
 					case "4":
 						current_user.changePassword();
 						break;
 					case "5":
 						if(logout()) {
+							end = true;
 							System.out.println("Logout successful!");
-							break;
 						}
+						else {
+							System.out.println("Logout cancelled!");
+						}
+						break;
 					default:
 						System.out.println("Wrong option! Choose again.");
 				}
 			}
+		}
+		try {
+			exit();
+		}
+		catch(Exception ex) {
+			System.err.println("ERROR: Error during serialization !");
 		}
 	}
 	
@@ -335,7 +403,7 @@ public class Main {
 	}
 	
 	public static boolean checkDateValidity(String date) {
-		String splitter[] = date.split(".");
+		String splitter[] = date.split("\\.");
 		if(splitter.length != 3)
 			return false;
 		int day,month,year;

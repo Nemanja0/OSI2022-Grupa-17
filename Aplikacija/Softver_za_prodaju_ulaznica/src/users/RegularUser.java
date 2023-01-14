@@ -162,4 +162,9 @@ public class RegularUser extends User {
 			}	
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " - USER";
+	}
 }
