@@ -20,8 +20,8 @@ public class Administrator extends User {
 	public void accountManagement() {
 		boolean end = false;
 		System.out.println("Choose one of the following options.");
-		System.out.println("1. Suspension\n2. Activate account\n3. Delete account\n4. Password cancellation\n5. Exit");
 		while(!end) {
+			System.out.println("1. Suspension\n2. Activate account\n3. Delete account\n4. Password cancellation\n5. Exit");
 			String option = Main.scanner.nextLine();
 			switch(option) {
 				case "1":
@@ -47,6 +47,10 @@ public class Administrator extends User {
 	}
 	
 	public void blockClientsEvents() {
+		if(Main.events.isEmpty()) {
+			System.out.println("Currently there are no events available.");
+			return;
+		}
 		System.out.println("~~~ Events ~~~\n");
 		Main.events.stream().forEach(System.out::println);
 		while(true) {
@@ -137,24 +141,29 @@ public class Administrator extends User {
 				if(target == null)
 					System.out.println("Entered username doesen't exist. Try again.");
 				else {
-					System.out.println("Are you sure you want to delete this users account ? (YES, NO)");
-					String yes_no = Main.scanner.nextLine();
-					if("YES".equals(yes_no)) {
-						Main.users.remove(target);
-						if(target instanceof Client) {
-							//If the targeted user is Client -> remove all of his events 
-							for(Event ev : Main.events)
-								if(ev.getEventCreator().equals(target)) {
-									ev.deleteAllTickets();
-									Main.events.remove(ev);
-								}
-						}
-						System.out.println("Account deletion successfull.");
-						break;
+					if(target instanceof Administrator) {
+						System.out.println("Unable to delete an administrator account. Try again.");
 					}
 					else {
-						System.out.println("Account deletion cancelled.");
-						return;
+						System.out.println("Are you sure you want to delete this users account ? (YES, NO)");
+						String yes_no = Main.scanner.nextLine();
+						if("YES".equals(yes_no)) {
+							Main.users.remove(target);
+							if(target instanceof Client) {
+								//If the targeted user is Client -> remove all of his events 
+								for(Event ev : Main.events)
+									if(ev.getEventCreator().equals(target)) {
+										ev.deleteAllTickets();
+										Main.events.remove(ev);
+									}
+							}
+							System.out.println("Account deletion successfull.");
+							break;
+						}
+						else {
+							System.out.println("Account deletion cancelled.");
+							return;
+						}
 					}
 				}
 			}
@@ -186,19 +195,24 @@ public class Administrator extends User {
 					if(target == null)
 						System.out.println("Entered username doesen't exist. Try again.");
 					else {
-						System.out.println("Are you sure you want to suspend this account ? (YES, NO)");
-						String yes_no = Main.scanner.nextLine();
-						if("YES".equals(yes_no)) {
-							System.out.println("Please enter the reason for suspension:");
-							String reason = Main.scanner.nextLine();
-							Main.suspend_reasons.add(reason);
-							Main.suspended_usernames.add(target.getUsername());
-							System.out.println("Account suspension successfull.");
-							break;
+						if(target instanceof Administrator) {
+							System.out.println("Unable to block an administrator account. Try again.");
 						}
 						else {
-							System.out.println("Account suspension cancelled.");
-							return;
+							System.out.println("Are you sure you want to suspend this account ? (YES, NO)");
+							String yes_no = Main.scanner.nextLine();
+							if("YES".equals(yes_no)) {
+								System.out.println("Please enter the reason for suspension:");
+								String reason = Main.scanner.nextLine();
+								Main.suspend_reasons.add(reason);
+								Main.suspended_usernames.add(target.getUsername());
+								System.out.println("Account suspension successfull.");
+								break;
+							}
+							else {
+								System.out.println("Account suspension cancelled.");
+								return;
+							}
 						}
 					}
 				}
@@ -207,6 +221,10 @@ public class Administrator extends User {
 	}
 	
 	public void activateUserAccount() {
+		if(Main.suspended_usernames.isEmpty()) {
+			System.out.println("There are no suspended users.");
+			return;
+		}
 		System.out.println("~~~ SUSPENDED ACCOUNTS ~~~\n");
 		for(int i=0;i<Main.suspend_reasons.size();i++)
 			System.out.println(Main.suspended_usernames.get(i) + " - " + Main.suspend_reasons.get(i));
@@ -238,5 +256,10 @@ public class Administrator extends User {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " - ADMIN";
 	}
 }
