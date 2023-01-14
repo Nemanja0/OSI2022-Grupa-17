@@ -10,14 +10,17 @@ public class Main {
 	public static String config = "config.txt";
 	public static String users_ser = "users.ser";
 	public static String events_ser = "events.ser";
+	public static String suspensions_ser = "suspensions.ser";
+	public static String reasons_ser = "reasons.ser";
 	public static String users_filename;
 	public static String events_filename;
+	public static String suspension_filename;
 	public static int max_login;
 	public static User current_user = null;
 	public static ArrayList<User> users = new ArrayList<>();
 	public static ArrayList<Event> events = new ArrayList<>();
-	public static ArrayList<String> blocked_usernames = new ArrayList<>();
-	public static ArrayList<String> block_reasons= new ArrayList<>();
+	public static ArrayList<String> suspended_usernames = new ArrayList<>();
+	public static ArrayList<String> suspend_reasons= new ArrayList<>();
 	public static boolean first_run = false;
 	public static Scanner scanner = new Scanner(System.in);
 	
@@ -26,6 +29,7 @@ public class Main {
 		BufferedReader reader = new BufferedReader(new FileReader(input));
 		users_filename = reader.readLine();
 		events_filename = reader.readLine();
+		suspension_filename = reader.readLine();
 		max_login = Integer.parseInt(reader.readLine());
 		reader.close();
 		input = new File(users_filename);
@@ -34,18 +38,17 @@ public class Main {
 			first_run = true;
 			return;
 		}
-		int index = -1;
-		for(int i=0;i<files.length;i++) {
-			if(files[i].toString().equals(users_ser)) {
-				index = i;
-				break;
-			}
-		}
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(files[index]));
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(users_filename + "/" + users_ser));
 		users = (ArrayList<User>)ois.readObject();
 		ois.close();
 		ois = new ObjectInputStream(new FileInputStream(events_filename + "/" + events_ser));
 		events = (ArrayList<Event>)ois.readObject();
+		ois.close();
+		ois = new ObjectInputStream(new FileInputStream(suspension_filename + "/" + suspensions_ser));
+		suspended_usernames = (ArrayList<String>)ois.readObject();
+		ois.close();
+		ois = new ObjectInputStream(new FileInputStream(suspension_filename + "/" + reasons_ser));
+		suspend_reasons = (ArrayList<String>)ois.readObject();
 		ois.close();
 	}
 	
@@ -59,6 +62,12 @@ public class Main {
 			for(User usr : users) {
 				if (usr.getUsername().equals(username))
 					if(usr.getPassword().equals(password)) {
+						if(suspended_usernames.contains(username)) {
+							System.out.println("ALERT: Your account has been suspended by an administrator.");
+							System.out.println("Reason for suspension: " + suspend_reasons.get(suspended_usernames.indexOf(username)));
+							System.out.println("Logging in is not allowed.");
+							return false;
+						}
 						current_user = usr;
 						break;
 					}

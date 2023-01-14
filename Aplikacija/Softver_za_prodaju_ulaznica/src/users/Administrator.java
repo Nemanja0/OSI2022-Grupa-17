@@ -25,8 +25,10 @@ public class Administrator extends User {
 			String option = Main.scanner.nextLine();
 			switch(option) {
 				case "1":
+					this.suspendUserAccount();
 					break;
 				case "2":
+					this.activateUserAccount();
 					break;
 				case "3":
 					this.deleteUserAccount();
@@ -139,11 +141,98 @@ public class Administrator extends User {
 					String yes_no = Main.scanner.nextLine();
 					if("YES".equals(yes_no)) {
 						Main.users.remove(target);
+						if(target instanceof Client) {
+							//If the targeted user is Client -> remove all of his events 
+							for(Event ev : Main.events)
+								if(ev.getEventCreator().equals(target)) {
+									ev.deleteAllTickets();
+									Main.events.remove(ev);
+								}
+						}
 						System.out.println("Account deletion successfull.");
 						break;
 					}
 					else {
 						System.out.println("Account deletion cancelled.");
+						return;
+					}
+				}
+			}
+		}
+	}
+	
+	public void suspendUserAccount() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
+		while(true) {
+			String option = null;
+			User target = null;
+			System.out.println("\nEnter username of desired account to suspend, or EXIT to quit:");
+			option = Main.scanner.nextLine();
+			if("EXIT".equals(option)) {
+				System.out.println("Account suspension cancelled.");
+				return;
+			}
+			else {
+				if(Main.suspended_usernames.contains(option)) {
+					System.out.println("This user has already been suspended. Try again.");
+				}
+				else {
+					for(User u : Main.users)
+						if(u.getUsername().equals(option)) {
+							target = u;
+							break;
+						}
+					if(target == null)
+						System.out.println("Entered username doesen't exist. Try again.");
+					else {
+						System.out.println("Are you sure you want to suspend this account ? (YES, NO)");
+						String yes_no = Main.scanner.nextLine();
+						if("YES".equals(yes_no)) {
+							System.out.println("Please enter the reason for suspension:");
+							String reason = Main.scanner.nextLine();
+							Main.suspend_reasons.add(reason);
+							Main.suspended_usernames.add(target.getUsername());
+							System.out.println("Account suspension successfull.");
+							break;
+						}
+						else {
+							System.out.println("Account suspension cancelled.");
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public void activateUserAccount() {
+		System.out.println("~~~ SUSPENDED ACCOUNTS ~~~\n");
+		for(int i=0;i<Main.suspend_reasons.size();i++)
+			System.out.println(Main.suspended_usernames.get(i) + " - " + Main.suspend_reasons.get(i));
+		while(true) {
+			String option = null;
+			System.out.println("Enter username of desired account to activate, or EXIT to quit:");
+			option = Main.scanner.nextLine();
+			if("EXIT".equals(option)) {
+				System.out.println("Account activation cancelled.");
+				return;
+			}
+			else {
+				if(!Main.suspended_usernames.contains(option))
+					System.out.println("Entered username is not in the suspended list. Try again.");
+				else {
+					System.out.println("Are you sure you want to activate this account ? (YES, NO)");
+					String yes_no = Main.scanner.nextLine();
+					if("YES".equals(yes_no)) {
+						int index = Main.suspended_usernames.indexOf(option);
+						Main.suspend_reasons.remove(index);
+						Main.suspended_usernames.remove(index);
+						System.out.println("Account activation successfull.");
+						break;
+					}
+					else {
+						System.out.println("Account activation cancelled.");
 						return;
 					}
 				}
