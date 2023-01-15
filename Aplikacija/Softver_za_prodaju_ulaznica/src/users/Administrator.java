@@ -88,6 +88,8 @@ public class Administrator extends User {
 	}
 	
 	public void cancelAccountPassword() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
 		while(true) {
 			String option = null;
 			User target = null;
@@ -105,6 +107,9 @@ public class Administrator extends User {
 					}
 				if(target == null)
 					System.out.println("Entered username doesen't exist. Try again.");
+				else if(target instanceof Administrator) {
+					System.out.println("Unable to delete an administrator account. Try again.");
+				}
 				else {
 					System.out.println("Are you sure you want to cancel this users password ? (YES, NO)");
 					String yes_no = Main.scanner.nextLine();
@@ -123,6 +128,8 @@ public class Administrator extends User {
 	}
 	
 	public void deleteUserAccount() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
 		while(true) {
 			String option = null;
 			User target = null;

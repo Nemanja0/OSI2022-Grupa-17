@@ -89,7 +89,18 @@ public class Ticket implements Serializable {
 		res += "Date and time: " + this.date + " " + this.time + "\n";
 		res += "Price: " + this.price + "$\n";
 		res += "Bought by user: " + this.user_name + "\n";
+		if(this.cancelled) {
+			res += "------------ CANCELLED ------------";
+		}
 		res += "========================================================";
 		return res;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o != null && o instanceof Ticket) {
+			return this.id.equals(((Ticket)o).id);
+		}
+		return false;
 	}
 }

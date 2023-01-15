@@ -282,7 +282,8 @@ public class Main {
 		while(!end) {
 			if(current_user instanceof RegularUser) {
 				RegularUser user = (RegularUser)current_user;
-				System.out.println("1. Purchase ticket\n2. Browse events\n3. Cancelling purchased tickets\n4. Change password\n5. Logout");
+				System.out.println("1. Purchase ticket\n2. Browse events\n3. Cancelling purchased tickets\n"
+									+ "4. Change password\n5. Check account state\n6. Logout");
 				option = scanner.nextLine();
 				switch(option) {
 					case "1":
@@ -298,6 +299,9 @@ public class Main {
 						current_user.changePassword();
 						break;
 					case "5":
+						user.checkAccountState();
+						break;
+					case "6":
 						if(logout()) {
 							end = true;
 							System.out.println("Logout successful!");

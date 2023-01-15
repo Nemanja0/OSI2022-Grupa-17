@@ -35,6 +35,10 @@ public class RegularUser extends User {
 	}
 	
 	public void browseEvents() {
+		if(Main.events.isEmpty()) {
+			System.out.println("There are no upcoming events.");
+			return;
+		}
 		System.out.println("~~~ Upcoming events ~~~\n");
 		Main.events.stream().forEach(System.out::println);
 		boolean end = false;
@@ -73,7 +77,13 @@ public class RegularUser extends User {
 	}
 	
 	public void purchaseTicket() {
-		System.out.println("~~~ Welcome to ticket purchase ~~~");
+		if(Main.events.isEmpty()) {
+			System.out.println("There are no upcoming events.");
+			return;
+		}
+		System.out.println("~~~ UPCOMING EVENTS ~~~\n");
+		Main.events.stream().forEach(System.out::println);
+		System.out.println("\n~~~ Welcome to ticket purchase ~~~");
 		System.out.println("Please enter name of the event which you want to buy ticket for"
 							+ ", if you want to cancel type EXIT:");
 		Event target = null;
@@ -124,10 +134,15 @@ public class RegularUser extends User {
 		Ticket ticket = new Ticket(ticket_id, target.getName(), date_and_time[0], date_and_time[1], this.username, target.getPrice(), elec_purchase);
 		target.addBoughtTicket(ticket);
 		this.purchased_tickets.add(ticket);
+		target.setNumOfTickets(target.getNumOfTickets() - 1);
 		System.out.println("Transaction completed successfully !");
 	}
 	
 	public void cancelPurchasedTicket() {
+		if(this.purchased_tickets.isEmpty()) {
+			System.out.println("You haven't purchased any tickets yet.");
+			return;
+		}
 		System.out.println("~~~ Purchased tickets ~~~\n");
 		this.purchased_tickets.stream().forEach(System.out::println);
 		while(true) {
@@ -152,6 +167,11 @@ public class RegularUser extends User {
 					if(target.isElectronically())
 						this.addCredits(target.getPrice());
 					target.setCancelled(true);
+					for(Event e : Main.events)
+						if(e.getBoughtTickets().contains(target)) {
+							e.setNumOfTickets(e.getNumOfTickets() + 1);
+							break;
+						}
 					System.out.println("Ticket successfuly cancelled!");
 					break;
 				}
@@ -161,6 +181,17 @@ public class RegularUser extends User {
 				}
 			}	
 		}
+	}
+	
+	public void checkAccountState() {
+		System.out.println("Your current credits balance: " + this.credits + "$");
+		System.out.println("You have currently purchased " + this.purchased_tickets.size() + " tickets.");
+		if(this.purchased_tickets.isEmpty())
+			return;
+		System.out.println("If you want to view purchased tickets, type VIEW:");
+		String input = Main.scanner.nextLine();
+		if("VIEW".equals(input))
+			this.purchased_tickets.stream().forEach(System.out::println);
 	}
 	
 	@Override
