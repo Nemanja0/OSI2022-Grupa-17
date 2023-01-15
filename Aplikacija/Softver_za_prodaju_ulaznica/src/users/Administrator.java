@@ -1,5 +1,7 @@
 package users;
 
+import java.util.ArrayList;
+
 import events.Event;
 import main.Main;
 import tickets.Ticket;
@@ -158,11 +160,13 @@ public class Administrator extends User {
 							Main.users.remove(target);
 							if(target instanceof Client) {
 								//If the targeted user is Client -> remove all of his events 
+								ArrayList<Event> removal = new ArrayList<>();
 								for(Event ev : Main.events)
 									if(ev.getEventCreator().equals(target)) {
 										ev.deleteAllTickets();
-										Main.events.remove(ev);
+										removal.add(ev);
 									}
+								removal.stream().forEach(e -> Main.events.remove(e));
 							}
 							System.out.println("Account deletion successfull.");
 							break;
