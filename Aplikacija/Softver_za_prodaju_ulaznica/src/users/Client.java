@@ -13,6 +13,12 @@ public class Client extends User {
 	public void cancelEvent() {
 		String event_name;
 		Event event;
+		if(Main.events.stream().filter(e -> e.getEventCreator().equals(this)).toList().isEmpty()) {
+			System.out.println("You haven't made any events yet !");
+			return;
+		}
+		System.out.println("~~~ YOUR UPCOMING EVENTS ~~~");
+		Main.events.stream().filter(e -> e.getEventCreator().equals(this)).forEach(System.out::println);
 		System.out.println("Welcome to the event cancellation. Please give the following information or cancel event cancellation by typing EXIT.\n");
 		System.out.println("Type a name of event that you want to cancel:");
 		while(true) {
@@ -118,15 +124,14 @@ public class Client extends User {
 	}
 	
 	public void browseSoldTickets() {
-		Event target = null;
-		for(Event e : Main.events)
-			if(e.getEventCreator().equals(this)) {
-				target = e;
-				break;
-			}
-		if(target != null) {
-			target.getBoughtTickets().stream().filter(x -> !x.isCancelled()).forEach(System.out::println);
+		if(Main.events.stream().filter(e -> e.getEventCreator().equals(this)).toList().isEmpty()) {
+			System.out.println("You haven't made any events yet !");
+			return;
 		}
+		System.out.println("~~~ SOLD TICKETS ~~~\n");
+		for(Event e : Main.events)
+			if(e.getEventCreator().equals(this)) 
+				e.getBoughtTickets().stream().filter(x -> !x.isCancelled()).forEach(System.out::println);
 		boolean end = false;
 		while(!end) {
 			String option;
@@ -139,13 +144,15 @@ public class Client extends User {
 					System.out.println("Enter the desired date:");
 					String date = Main.scanner.nextLine();
 					if(Main.checkDateValidity(date)) {
-						target.getBoughtTickets().stream().filter(x -> x.getDate().equals(date)).forEach(System.out::println);
+						for(Event e : Main.events)
+							e.getBoughtTickets().stream().filter(x -> x.getDate().equals(date)).forEach(System.out::println);
 					}
 					else
 						System.out.println("Invalid input ! Try again.");
 					break;
 				case "CANCEL":
-					target.getBoughtTickets().stream().filter(x -> x.isCancelled()).forEach(System.out::println);
+					for(Event e : Main.events)
+						e.getBoughtTickets().stream().filter(x -> x.isCancelled()).forEach(System.out::println);
 					break;
 				case "EXIT":
 					end = true;

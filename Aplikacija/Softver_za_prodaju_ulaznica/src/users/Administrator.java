@@ -1,5 +1,7 @@
 package users;
 
+import java.util.ArrayList;
+
 import events.Event;
 import main.Main;
 import tickets.Ticket;
@@ -88,6 +90,8 @@ public class Administrator extends User {
 	}
 	
 	public void cancelAccountPassword() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
 		while(true) {
 			String option = null;
 			User target = null;
@@ -105,6 +109,9 @@ public class Administrator extends User {
 					}
 				if(target == null)
 					System.out.println("Entered username doesen't exist. Try again.");
+				else if(target instanceof Administrator) {
+					System.out.println("Unable to delete an administrator account. Try again.");
+				}
 				else {
 					System.out.println("Are you sure you want to cancel this users password ? (YES, NO)");
 					String yes_no = Main.scanner.nextLine();
@@ -123,6 +130,8 @@ public class Administrator extends User {
 	}
 	
 	public void deleteUserAccount() {
+		System.out.println("~~~ ACTIVE USERS ~~~\n");
+		Main.users.stream().forEach(System.out::println);
 		while(true) {
 			String option = null;
 			User target = null;
@@ -151,11 +160,13 @@ public class Administrator extends User {
 							Main.users.remove(target);
 							if(target instanceof Client) {
 								//If the targeted user is Client -> remove all of his events 
+								ArrayList<Event> removal = new ArrayList<>();
 								for(Event ev : Main.events)
 									if(ev.getEventCreator().equals(target)) {
 										ev.deleteAllTickets();
-										Main.events.remove(ev);
+										removal.add(ev);
 									}
+								removal.stream().forEach(e -> Main.events.remove(e));
 							}
 							System.out.println("Account deletion successfull.");
 							break;
