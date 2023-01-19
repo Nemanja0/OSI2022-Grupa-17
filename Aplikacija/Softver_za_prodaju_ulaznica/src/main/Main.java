@@ -189,9 +189,9 @@ public class Main {
 	
 	public static boolean logout() {
 		String yes_no;
-		System.out.println("Are you sure? (yes, no)");
+		System.out.println("Are you sure? (YES, NO)");
 		yes_no = scanner.nextLine();
-		if("yes".equals(yes_no)) {
+		if("YES".equals(yes_no)) {
 			return true;
 		}
 		return false;
@@ -420,7 +420,7 @@ public class Main {
 			int allowed_day = getAllowedDay(month);
 			if(splitter[0].charAt(0) == '0')
 				splitter[0] = splitter[0].substring(1);
-			day = Integer.parseInt(splitter[1]);
+			day = Integer.parseInt(splitter[0]);
 			if(day < 0 || day > allowed_day)
 				return false;
 			year = Integer.parseInt(splitter[2]);
